@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { makeStyles } from 'tss-react/mui';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { CryptoState } from '../CryptoContext';
 
 const useStyles = makeStyles()(() => {
   return {
@@ -17,18 +18,20 @@ const useStyles = makeStyles()(() => {
 });
 
 const Header = () => {
-const {classes} = useStyles();
+  const { classes } = useStyles();
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const darkTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#fff",
+  const { currency, setCurrency } = CryptoState();
+
+  const darkTheme = createTheme({
+    palette: {
+      primary: {
+        main: "#fff",
+      },
+      type: "dark",
     },
-    type: "dark",
-  },
-}); 
+  });
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -39,12 +42,18 @@ const darkTheme = createTheme({
               Crpto Trail
             </Typography>
 
-            <Select variant='outlined' style={{
-              width: 100,
-              height: 40,
-              marginRight: 15,
-              // backgroundColor: 'white'
-            }}>
+            <Select
+              variant='outlined'
+              style={{
+                width: 100,
+                height: 40,
+                marginRight: 15,
+                backgroundColor: 'white'
+              }}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+
+            >
               <MenuItem value={"USD"} >USD</MenuItem>
               <MenuItem value={"INR"} >INR</MenuItem>
             </Select>

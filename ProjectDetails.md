@@ -19,3 +19,12 @@
 >## Font
 * Montserrat of different weights
 
+>## CoinGecko API
+* https://www.coingecko.com/en/api/documentation
+* API using
+  * Single Coin API
+  * Historic Chart Display API
+  * API to Display Trending Coin
+
+
+
