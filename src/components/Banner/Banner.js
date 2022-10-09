@@ -22,8 +22,8 @@ const useStyles = makeStyles()(() => {
             flexDirection: "column",
             justifyContent: "center",
             textAlign: "center",
-        },
-    };
+        }
+};
 });
 
 const Banner = () => {
@@ -43,6 +43,7 @@ const Banner = () => {
                     >
                         Crypto Trail
                     </Typography>
+
                     <Typography 
                         variant="subtitle2"
                         style={{
@@ -53,8 +54,10 @@ const Banner = () => {
                     >
                         Your final destination for Cryptocurrency Information
                     </Typography>
-                    <Carousel></Carousel>
                 </div>
+
+                <Carousel/>
+                
             </Container>
         </div>
     )
