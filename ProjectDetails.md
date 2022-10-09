@@ -14,17 +14,25 @@
 * Material UI API
   * npm install tss-react
 
-
-
 >## Font
 * Montserrat of different weights
 
 >## CoinGecko API
 * https://www.coingecko.com/en/api/documentation
 * API using
+  * CoinList API
   * Single Coin API
-  * Historic Chart Display API
-  * API to Display Trending Coin
+  * Historical Chart Display API
+  * Trending Coin API
 
+>## Axios
+* npm i axios
+* For fetching API end points details from CoinGecko API
+
+>## React Alice Carousel
+* https://www.npmjs.com/package/react-alice-carousel
+* npm i react-alice-carousel
+* Paste inside Index.js __import 'react-alice-carousel/lib/alice-carousel.css';'__
+* 
 
 
