@@ -32,7 +32,19 @@
 >## React Alice Carousel
 * https://www.npmjs.com/package/react-alice-carousel
 * npm i react-alice-carousel
-* Paste inside Index.js __import 'react-alice-carousel/lib/alice-carousel.css';'__
-* 
+* Paste inside Index.js __import 'react-alice-carousel/lib/alice-carousel.css';
+
+>## Table
+* Creating table using Material Ui
+* https://mui.com/material-ui/react-table/#main-content
+
+>## Linear Progress
+* For Loading Animation
+* https://mui.com/material-ui/api/linear-progress/#main-content
+* https://mui.com/material-ui/react-progress/
+
+
+
+
 
 

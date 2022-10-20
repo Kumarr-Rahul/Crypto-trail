@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { makeStyles } from 'tss-react/mui';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CryptoState } from '../CryptoContext';
+import { orange } from '@mui/material/colors';
 
 const useStyles = makeStyles()(() => {
   return {
@@ -26,10 +27,10 @@ const Header = () => {
 
   const darkTheme = createTheme({
     palette: {
+      mode: 'dark',
       primary: {
-        main: "#fff",
-      },
-      type: "dark",
+        main: orange[500]
+      }
     },
   });
 
@@ -48,7 +49,6 @@ const Header = () => {
                 width: 100,
                 height: 40,
                 marginRight: 15,
-                backgroundColor: 'white'
               }}
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
