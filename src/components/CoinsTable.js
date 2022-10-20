@@ -6,18 +6,20 @@ import { CryptoState } from '../CryptoContext';
 import { orange } from '@mui/material/colors';
 import { useNavigate } from 'react-router-dom';
 import { makeStyles } from 'tss-react/mui';
-// import { makeStyles } from 'tss-react/mui';
 
-
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 
 const CoinsTable = () => {
 
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1)
   const history = useNavigate();
 
-  const { currency } = CryptoState(); //destructuring currency
+  const { currency, symbol } = CryptoState(); //destructuring currency
 
   const fetchCoins = async () => {
     setLoading(true);
@@ -89,7 +91,7 @@ const CoinsTable = () => {
             loading ? (
               <LinearProgress style={{ backgroundColor: "green" }} />
             ) : (
-              <TableContainer>
+              <Table>
                 <TableHead style={{ backgroundColor: "#EEBC1D" }}>
                   <TableRow>
                     {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
@@ -109,54 +111,86 @@ const CoinsTable = () => {
                 </TableHead>
 
                 <TableBody>
-                  {handleSearch().map(row => {
-                    const profit = row.price_change_percentage_24h > 0;
+                  {handleSearch()
+                    .slice((page - 1) * 10, (page - 1) * 10 + 10)
+                    .map((row) => {
+                      const profit = row.price_change_percentage_24h > 0;
 
-                    return (
-                      <TableRow
-                        onClick={() => history.push(`/coins/${row.id}`)}
-                        className={classes.row}
-                        key={row.name}
-                      >  
-
-                        {/* First Column content i.e. coin image, symbol and name */}
-                        <TableCell
-                          component="th"
-                          scope="row"
-                          style={{
-                            display: "flex",
-                            gap: 15,
-                          }}
+                      return (
+                        <TableRow
+                          onClick={() => history.push(`/coins/${row.id}`)}
+                          className={classes.row}
+                          key={row.name}
                         >
-                          <img
-                            src={row?.image}
-                            alt={row.name}
-                            height="50"
-                            style={{ marginBottom: 10 }}
-                          />
 
-                          <div
-                            style={{ display: "flex", flexDirection: "column" }}
+                          {/* First Column content i.e. coin image, symbol and name */}
+                          <TableCell
+                            component="th"
+                            scope="row"
+                            style={{
+                              display: "flex",
+                              gap: 15,
+                            }}
                           >
-                            <span
-                              style={{
-                                textTransform: "uppercase",
-                                fontSize: 22,
-                              }}
-                            >
-                              {row.symbol}
-                            </span>
-                            <span style={{ color: "darkgrey" }}>
-                              {row.name}
-                            </span>
-                          </div>
+                            <img
+                              src={row?.image}
+                              alt={row.name}
+                              height="50"
+                              style={{ marginBottom: 10 }}
+                            />
 
-                        </TableCell>
-                      </TableRow>
-                    )
-                  })}
+                            <div
+                              style={{ display: "flex", flexDirection: "column" }}
+                            >
+                              <span
+                                style={{
+                                  textTransform: "uppercase",
+                                  fontSize: 22,
+                                }}
+                              >
+                                {row.symbol}
+                              </span>
+                              <span style={{ color: "darkgrey" }}>
+                                {row.name}
+                              </span>
+                            </div>
+
+                          </TableCell>
+
+                          {/* 2nd Column for price */}
+                          <TableCell align="right">
+                            {symbol}{" "}
+                            {numberWithCommas(row.current_price.toFixed(2))}
+                          </TableCell>
+
+                          {/* 3rd Column for 24hrs price change */}
+                          <TableCell
+                            align="right"
+                            style={{
+                              color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+                              fontWeight: 500,
+                            }}
+                          >
+                            {profit && "+"}
+                            {row.price_change_percentage_24h.toFixed(2)}%
+                          </TableCell>
+
+                          {/* 4th Column for 24hrs market cap */}
+                          <TableCell align="right">
+                            {symbol}{" "}
+                            {numberWithCommas(
+                              row.market_cap.toString().slice(0, -6) //slice to show upto 6 digits
+                            )}
+                            M
+                          </TableCell>
+
+
+                        </TableRow>
+                      )
+                    })}
                 </TableBody>
-              </TableContainer>
+
+              </Table>
             )
           }
         </TableContainer>
