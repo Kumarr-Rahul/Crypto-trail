@@ -1,4 +1,4 @@
-import { Container, createTheme, LinearProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from '@mui/material';
+import { Container, createTheme, LinearProgress, Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { CoinList } from '../config/api';
@@ -60,6 +60,11 @@ const CoinsTable = () => {
         },
         fontFamily: "Montserrat",
       },
+      pagination: {
+        "& .MuiPaginationItem-root": {
+          color: "gold",
+        },
+      },
     };
   });
 
@@ -118,7 +123,7 @@ const CoinsTable = () => {
 
                       return (
                         <TableRow
-                          onClick={() => history.push(`/coins/${row.id}`)}
+                          onClick={() => history(`/coins/${row.id}`)}
                           className={classes.row}
                           key={row.name}
                         >
@@ -194,6 +199,22 @@ const CoinsTable = () => {
             )
           }
         </TableContainer>
+
+        <Pagination
+          count={(handleSearch()?.length / 10).toFixed(0)}
+          style={{
+            padding: 20,
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+
+          classes={{ ul: classes.pagination }}
+          onChange={(_, value) => {
+            setPage(value);
+            window.scroll(0, 450);
+          }}
+        />
 
       </Container>
     </ThemeProvider>

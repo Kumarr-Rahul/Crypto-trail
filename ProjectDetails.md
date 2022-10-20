@@ -44,6 +44,9 @@
 * https://mui.com/material-ui/react-progress/
 
 
+>## Bug Encountered and fixed 
+* If theme not working properly, text not visible -> Read Documentation of Material UI
+* Some differeneces in router dom V5 and V6
 
 
 
