@@ -34,11 +34,9 @@
 * npm i react-alice-carousel
 * Paste inside Index.js __import 'react-alice-carousel/lib/alice-carousel.css';
 
->## React HTML Parser
+>## HTML React Parser
 * To parse Coin Information
-* npm i html-react-parser ( not working)
-* import parse from "html-react-parser" (not working)
-* npm install react-html-parser --force (it is for older version not for react 18, but we force install)
+* npm i html-react-parser
 
 
 
@@ -57,10 +55,6 @@
 * Some differeneces in router dom V5 and V6
 
 # __Bug Encountered but not fixed__ 
->Single Coin info
-* Getting HTML tag for some coin info form API
-* React-html-parser not working for react 18 -> alternate html-react-parser
-* Unable find 'html-react-parser' proper implementation for the project
 
 
 

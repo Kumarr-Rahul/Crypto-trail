@@ -7,7 +7,7 @@ import CoinInfo from '../components/Banner/CoinInfo';
 import { SingleCoin } from '../config/api';
 import { CryptoState } from '../CryptoContext';
 import { numberWithCommas } from "../components/CoinsTable";
-import parse from "html-react-parser";
+import HTMLReactParser from 'html-react-parser';
 
 
 const CoinPage = () => {
@@ -102,7 +102,7 @@ const CoinPage = () => {
         </Typography>
 
         <Typography variant="subtitle1" className={classes.description}>
-          {(coin?.description.en.split(". ")[0])}.
+          {HTMLReactParser(coin?.description.en.split(". ")[0])}.
         </Typography>
 
         <div className={classes.marketData}>
