@@ -1,4 +1,4 @@
-# Installation
+# __Installation__
 
 > ## React
 * npx create-react-app __'app-name'__
@@ -34,19 +34,33 @@
 * npm i react-alice-carousel
 * Paste inside Index.js __import 'react-alice-carousel/lib/alice-carousel.css';
 
->## Table
+>## React HTML Parser
+* To parse Coin Information
+* npm i html-react-parser ( not working)
+* import parse from "html-react-parser" (not working)
+* npm install react-html-parser --force (it is for older version not for react 18, but we force install)
+
+
+
+# __Table__
 * Creating table using Material Ui
 * https://mui.com/material-ui/react-table/#main-content
 
->## Linear Progress
+# __Linear Progress__
 * For Loading Animation
 * https://mui.com/material-ui/api/linear-progress/#main-content
 * https://mui.com/material-ui/react-progress/
 
 
->## Bug Encountered and fixed 
+# __Bug Encountered and fixed__ 
 * If theme not working properly, text not visible -> Read Documentation of Material UI
 * Some differeneces in router dom V5 and V6
+
+# __Bug Encountered but not fixed__ 
+>Single Coin info
+* Getting HTML tag for some coin info form API
+* React-html-parser not working for react 18 -> alternate html-react-parser
+* Unable find 'html-react-parser' proper implementation for the project
 
 
 
