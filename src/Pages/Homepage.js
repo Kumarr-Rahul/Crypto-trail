@@ -4,7 +4,7 @@ import CoinsTable from '../components/CoinsTable'
 import './MyStyle.css'
 
 const Homepage = () => {
-  return <div className='gradient'>
+  return <div>
     <Banner></Banner>
     <CoinsTable/>
   </div>

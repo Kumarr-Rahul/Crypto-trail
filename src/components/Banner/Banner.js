@@ -3,6 +3,7 @@ import { padding } from '@mui/system';
 import React from 'react'
 import { makeStyles } from 'tss-react/mui';
 import Carousel from './Carousel';
+import '../../Pages/MyStyle.css'
 
 const useStyles = makeStyles()(() => {
     return {
@@ -28,7 +29,7 @@ const Banner = () => {
 
     return (
         <div>
-            <Container>
+            <Container style={{marginTop: 30, marginBottom:20}}>
                 <Paper sx={{ backgroundColor: "#25004E"}} elevation={24} className={classes.bannerContent} >
 
                     <div className={classes.tagline}>
