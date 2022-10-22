@@ -77,7 +77,9 @@
     * import { Chart as ChartJS, CategoryScale LinearScale, PointElement,LineElement} from 'chart.js';
     * ChartJS.register (CategoryScale, LinearScale, PointElement, LineElement);
 
-# __Bug Encountered but not fixed__ 
+# __Future features__ 
+* Profile section
+* Wishlist coin
 
 # **Color Scheme**
 * Card color : #25004E
