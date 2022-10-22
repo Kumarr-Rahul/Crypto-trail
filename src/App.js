@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Homepage from './Pages/Homepage';
 import CoinPage from './Pages/CoinPage';
 import { makeStyles } from 'tss-react/mui';
+import { Line } from "react-chartjs-2";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={ <Homepage /> } />
         <Route path="/coins/:id" element={<CoinPage />} />
       </Routes>
+    
     </div>
   );
 }

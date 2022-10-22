@@ -39,6 +39,16 @@
 * npm i html-react-parser
 
 
+>## Chart JS 2
+* npm i react-chartjs-2
+* charting library
+* https://www.npmjs.com/package/react-chartjs-2
+* npm i chart.js
+* https://www.npmjs.com/package/chart.js?activeTab=readme
+  
+
+
+
 
 # __Table__
 * Creating table using Material Ui
@@ -53,6 +63,12 @@
 # __Bug Encountered and fixed__ 
 * If theme not working properly, text not visible -> Read Documentation of Material UI
 * Some differeneces in router dom V5 and V6
+* **React Render bug and white screen**
+  * Always import **makeStyles** from **'tss-react/mui'** instead of '@mui/material'
+  * Issue faced in -> In CoinInfo page
+  * import { makeStyles } from 'tss-react/mui' ✅
+  * import { makeStyles } from '@mui/material' ❌
+  
 
 # __Bug Encountered but not fixed__ 
 

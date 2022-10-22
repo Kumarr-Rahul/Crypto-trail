@@ -3,11 +3,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { makeStyles } from 'tss-react/mui';
-import CoinInfo from '../components/Banner/CoinInfo';
+import CoinInfo from '../components/CoinInfo';
 import { SingleCoin } from '../config/api';
 import { CryptoState } from '../CryptoContext';
 import { numberWithCommas } from "../components/CoinsTable";
 import HTMLReactParser from 'html-react-parser';
+import Sand from '../components/Sand';
+
 
 
 const CoinPage = () => {
@@ -168,7 +170,6 @@ const CoinPage = () => {
 
       {/* Chart */}
       <CoinInfo coin={coin} />
-
 
     </div>
   )
