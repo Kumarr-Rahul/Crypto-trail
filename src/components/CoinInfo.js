@@ -10,6 +10,21 @@ import { Line } from "react-chartjs-2";
 import SelectButton from './SelectButton';
 import { chartDays } from '../config/data';
 
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+);
+
 
 const CoinInfo = ({ coin }) => {
 

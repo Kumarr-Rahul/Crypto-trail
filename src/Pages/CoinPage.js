@@ -8,7 +8,6 @@ import { SingleCoin } from '../config/api';
 import { CryptoState } from '../CryptoContext';
 import { numberWithCommas } from "../components/CoinsTable";
 import HTMLReactParser from 'html-react-parser';
-import Sand from '../components/Sand';
 
 
 

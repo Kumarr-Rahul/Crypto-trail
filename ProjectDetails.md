@@ -63,12 +63,19 @@
 # __Bug Encountered and fixed__ 
 * If theme not working properly, text not visible -> Read Documentation of Material UI
 * Some differeneces in router dom V5 and V6
+
 * **React Render bug and white screen**
   * Always import **makeStyles** from **'tss-react/mui'** instead of '@mui/material'
   * Issue faced in -> In CoinInfo page
   * import { makeStyles } from 'tss-react/mui' ✅
   * import { makeStyles } from '@mui/material' ❌
-  
+
+* **Reload Screen Bug**
+  * Getting this bug on Coin Page -> Historical Graph Section
+  * Reason : On reload react can't get some properties of Chart JS
+  * Fix
+    * import { Chart as ChartJS, CategoryScale LinearScale, PointElement,LineElement} from 'chart.js';
+    * ChartJS.register (CategoryScale, LinearScale, PointElement, LineElement);
 
 # __Bug Encountered but not fixed__ 
 
