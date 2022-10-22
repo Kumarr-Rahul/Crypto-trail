@@ -8,7 +8,6 @@ import { SingleCoin } from '../config/api';
 import { CryptoState } from '../CryptoContext';
 import { numberWithCommas } from "../components/CoinsTable";
 import HTMLReactParser from 'html-react-parser';
-import './MyStyle.css'
 
 
 
@@ -48,7 +47,7 @@ const CoinPage = () => {
         alignItems: "center",
 
         margin: 25
-        // borderRight: "2px solid #FF5722",
+
 
       },
       headingCoin: {
@@ -103,97 +102,97 @@ const CoinPage = () => {
   if (!coin) return <LinearProgress style={{ backgroundColor: "#FF5722" }} />;
 
   return (
-    <div className='gradient'>
-      <div className={classes.container}>
 
-        {/* sidebar */}
+    <div className={classes.container}>
 
-        <div className={classes.sidebar}>
-          <Paper elevation={24} className='gradient'>
-            <img
-              src={coin?.image.large}
-              alt={coin?.name}
-              height="200"
-              style={{ marginBottom: 20, marginTop: 20, marginLeft: 130 }}
-            />
-            <Typography variant="h3" className={classes.headingCoin} style={{ color: '#FF5722' }}>
-              {coin?.name}
-            </Typography>
+      {/* sidebar */}
 
-            <Typography variant="subtitle1" className={classes.description} >
-              {HTMLReactParser(coin?.description.en.split(". ")[0])}.
-            </Typography>
+      <div className={classes.sidebar}>
+        <Paper elevation={24} className='gradient'>
+          <img
+            src={coin?.image.large}
+            alt={coin?.name}
+            height="200"
+            style={{ marginBottom: 20, marginTop: 20, marginLeft: 130 }}
+          />
+          <Typography variant="h3" className={classes.headingCoin} style={{ color: '#FF5722' }}>
+            {coin?.name}
+          </Typography>
 
-            <div className={classes.marketData}>
+          <Typography variant="subtitle1" className={classes.description} >
+            {HTMLReactParser(coin?.description.en.split(". ")[0])}.
+          </Typography>
 
-              {/* For Rank */}
-              <span style={{ display: 'flex' }}>
-                <Typography variant='h5' className={classes.heading} style={{ color: '#FF5722' }}>
-                  Rank :
-                </Typography>
+          <div className={classes.marketData}>
 
-                &nbsp; &nbsp;
-                <Typography
-                  variant="h5"
-                  style={{
-                    fontFamily: "Montserrat"
-                  }}
-                >
-                  {numberWithCommas(coin?.market_cap_rank)}
-                </Typography>
-              </span>
+            {/* For Rank */}
+            <span style={{ display: 'flex' }}>
+              <Typography variant='h5' className={classes.heading} style={{ color: '#FF5722' }}>
+                Rank :
+              </Typography>
 
-              {/* Current Price */}
-              <span style={{ display: "flex" }}>
-                <Typography variant="h5" className={classes.heading} style={{ color: '#FF5722' }}>
-                  Current Price:
-                </Typography>
-                &nbsp; &nbsp;
-                <Typography
-                  variant="h5"
-                  style={{
-                    fontFamily: "Montserrat",
-                  }}
-                >
-                  {symbol}{" "}
-                  {numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}
-                </Typography>
-              </span>
+              &nbsp; &nbsp;
+              <Typography
+                variant="h5"
+                style={{
+                  fontFamily: "Montserrat"
+                }}
+              >
+                {numberWithCommas(coin?.market_cap_rank)}
+              </Typography>
+            </span>
 
-              {/* Market Cap */}
-              <span style={{ display: "flex" }}>
-                <Typography variant="h5" className={classes.heading} style={{ color: '#FF5722' }}>
-                  Market Cap:
-                </Typography>
-                &nbsp; &nbsp;
-                <Typography
-                  variant="h5"
-                  style={{
-                    fontFamily: "Montserrat",
-                  }}
-                >
-                  {symbol}{" "}
-                  {
-                    numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()]
-                      .toString()
-                      .slice(0, -6))
-                  }
-                  M
-                </Typography>
-              </span>
+            {/* Current Price */}
+            <span style={{ display: "flex" }}>
+              <Typography variant="h5" className={classes.heading} style={{ color: '#FF5722' }}>
+                Current Price:
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography
+                variant="h5"
+                style={{
+                  fontFamily: "Montserrat",
+                }}
+              >
+                {symbol}{" "}
+                {numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}
+              </Typography>
+            </span>
 
-            </div>
-          </Paper>
-        </div>
+            {/* Market Cap */}
+            <span style={{ display: "flex" }}>
+              <Typography variant="h5" className={classes.heading} style={{ color: '#FF5722' }}>
+                Market Cap:
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography
+                variant="h5"
+                style={{
+                  fontFamily: "Montserrat",
+                }}
+              >
+                {symbol}{" "}
+                {
+                  numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()]
+                    .toString()
+                    .slice(0, -6))
+                }
+                M
+              </Typography>
+            </span>
 
-
-        {/* Chart */}
-
-        <CoinInfo coin={coin} />
-
-
+          </div>
+        </Paper>
       </div>
+
+
+      {/* Chart */}
+
+      <CoinInfo coin={coin} />
+
+
     </div>
+
   )
 }
 

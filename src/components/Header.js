@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { makeStyles } from 'tss-react/mui';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CryptoState } from '../CryptoContext';
-import '../Pages/MyStyle.css'
 
 const useStyles = makeStyles()(() => {
   return {
@@ -15,9 +14,7 @@ const useStyles = makeStyles()(() => {
       fontWeight: "bold",
       cursor: "pointer",
     },
-    col: {
-      backgroundColor: 'red'
-    }
+    
   };
 });
 
@@ -39,7 +36,7 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar  color='transparent' position='static' className='header'>
+      <AppBar  color='transparent' position='static'>
         <Container>
           <Toolbar>
             <Typography onClick={() => navigate("/")} className={classes.title} variant='h5'>
