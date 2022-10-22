@@ -8,10 +8,10 @@ import '../../Pages/MyStyle.css'
 const useStyles = makeStyles()(() => {
     return {
         bannerContent: {
-            height: 450,
+            height: 400,
             display: "flex",
             flexDirection: "column",
-            paddingTop: 30,
+            paddingTop: 20,
             justifyContent: "space-around",
         },
         tagline: {
@@ -51,6 +51,7 @@ const Banner = () => {
                                 color: "#FF5722",
                                 textTransform: "capitalize",
                                 fontFamily: "Montserrat",
+                                fontWeight: "bold"
                             }}
                         >
                             Your final destination for Cryptocurrency Information
