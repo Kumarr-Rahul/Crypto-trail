@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Homepage from './Pages/Homepage';
 import CoinPage from './Pages/CoinPage';
 import { makeStyles } from 'tss-react/mui';
-import { Line } from "react-chartjs-2";
 
 
 function App() {

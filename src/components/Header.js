@@ -10,7 +10,7 @@ const useStyles = makeStyles()(() => {
   return {
     title: {
       flex: 1,
-      color: "#62D2A2",
+      color: "#FF5722",
       fontFamily: "Montserrat",
       fontWeight: "bold",
       cursor: "pointer",
@@ -40,7 +40,7 @@ const Header = () => {
         <Container>
           <Toolbar>
             <Typography onClick={() => navigate("/")} className={classes.title} variant='h5'>
-              Crpto Trail
+              Crypto Trail
             </Typography>
 
             <Select
@@ -52,7 +52,6 @@ const Header = () => {
               }}
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
-
             >
               <MenuItem value={"USD"} >USD</MenuItem>
               <MenuItem value={"INR"} >INR</MenuItem>

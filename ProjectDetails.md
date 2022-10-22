@@ -79,6 +79,11 @@
 
 # __Bug Encountered but not fixed__ 
 
+# **Color Scheme**
+* Card color : #25004E
+* Orange: #FF5722
+
+
 
 
 

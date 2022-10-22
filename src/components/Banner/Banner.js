@@ -1,19 +1,16 @@
-import { Container, Typography } from '@mui/material';
+import { Container, Paper, Typography } from '@mui/material';
+import { padding } from '@mui/system';
 import React from 'react'
 import { makeStyles } from 'tss-react/mui';
 import Carousel from './Carousel';
 
 const useStyles = makeStyles()(() => {
     return {
-        banner: {
-            backgroundImage: "url(./banner2.jpg)",
-
-        },
         bannerContent: {
-            height: 400,
+            height: 450,
             display: "flex",
             flexDirection: "column",
-            paddingTop: 25,
+            paddingTop: 30,
             justifyContent: "space-around",
         },
         tagline: {
@@ -23,41 +20,44 @@ const useStyles = makeStyles()(() => {
             justifyContent: "center",
             textAlign: "center",
         }
-};
+    };
 });
 
 const Banner = () => {
     const { classes } = useStyles();
 
     return (
-        <div className={classes.banner}>
-            <Container className={classes.bannerContent}>
-                <div className={classes.tagline}>
-                    <Typography
-                        variant="h2"
-                        style={{
-                            fontWeight: "bold",
-                            marginBottom: 15,
-                            fontFamily: "Montserrat",
-                        }}
-                    >
-                        Crypto Trail
-                    </Typography>
+        <div>
+            <Container>
+                <Paper sx={{ backgroundColor: "#25004E"}} elevation={24} className={classes.bannerContent} >
 
-                    <Typography 
-                        variant="subtitle2"
-                        style={{
-                            color: "#62D2A2",
-                            textTransform: "capitalize",
-                            fontFamily: "Montserrat",
-                        }}
-                    >
-                        Your final destination for Cryptocurrency Information
-                    </Typography>
-                </div>
+                    <div className={classes.tagline}>
+                        <Typography
+                            variant="h2"
+                            style={{
+                                fontWeight: "bold",
+                                marginBottom: 15,
+                                fontFamily: "Montserrat",
+                                color: "White"
+                            }}
+                        >
+                            Crypto Trail
+                        </Typography>
 
-                <Carousel/>
-                
+                        <Typography
+                            variant="subtitle2"
+                            style={{
+                                color: "#FF5722",
+                                textTransform: "capitalize",
+                                fontFamily: "Montserrat",
+                            }}
+                        >
+                            Your final destination for Cryptocurrency Information
+                        </Typography>
+                    </div>
+
+                    <Carousel />
+                </Paper>
             </Container>
         </div>
     )

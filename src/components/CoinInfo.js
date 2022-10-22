@@ -86,10 +86,11 @@ const CoinInfo = ({ coin }) => {
 
   return (
     <ThemeProvider theme={darkTheme}>
+
       <div className={classes.container}>
         {!historicData | flag === false ? (
           <CircularProgress
-            style={{ color: "gold" }}
+            style={{ color: "#FF5722" }}
             size={250}
             thickness={1}
           />
@@ -109,7 +110,7 @@ const CoinInfo = ({ coin }) => {
                 {
                   data: historicData.map((coin) => coin[1]),
                   label: `Price ( Past ${days} Days ) in ${currency}`,
-                  borderColor: "#EEBC1D",
+                  borderColor: "#FF5722",
                 },
               ],
             }} options={option}
@@ -123,10 +124,10 @@ const CoinInfo = ({ coin }) => {
                 width: "100%",
               }}
             >
-              {chartDays.map( (day) => (
+              {chartDays.map((day) => (
                 <SelectButton
                   key={day.value}
-                  onClick={ () => setDays(day.value)}
+                  onClick={() => setDays(day.value)}
                   selected={day.value === days}
                 >
                   {day.label}

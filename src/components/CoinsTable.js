@@ -30,7 +30,6 @@ const CoinsTable = () => {
     setLoading(false);
   }
 
-
   useEffect(() => {
     fetchCoins();
   }, [currency]);
@@ -53,16 +52,16 @@ const CoinsTable = () => {
   const useStyles = makeStyles()(() => {
     return {
       row: {
-        backgroundColor: "#16171a",
+        backgroundColor: "#25004E",
         cursor: "pointer",
         "&:hover": {
-          backgroundColor: "#131111",
+          backgroundColor: "#1F003E",
         },
         fontFamily: "Montserrat",
       },
       pagination: {
         "& .MuiPaginationItem-root": {
-          color: "gold",
+          color: "#FF7043",
         },
       },
     };
@@ -94,10 +93,10 @@ const CoinsTable = () => {
         <TableContainer>
           {
             loading ? (
-              <LinearProgress style={{ backgroundColor: "green" }} />
+              <LinearProgress style={{ backgroundColor: "#FF5722" }} />
             ) : (
               <Table>
-                <TableHead style={{ backgroundColor: "#EEBC1D" }}>
+                <TableHead style={{ backgroundColor: "#FF5722" }}>
                   <TableRow>
                     {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
                       <TableCell
