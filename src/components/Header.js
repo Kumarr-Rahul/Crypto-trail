@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar   position='static' className='header'>
+      <AppBar  color='transparent' position='static' className='header'>
         <Container>
           <Toolbar>
             <Typography onClick={() => navigate("/")} className={classes.title} variant='h5'>
