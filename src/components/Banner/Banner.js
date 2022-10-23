@@ -30,7 +30,7 @@ const Banner = () => {
     return (
         <div>
             <Container style={{marginTop: 30, marginBottom:20}}>
-                <Paper sx={{ backgroundColor: "#25004E"}} elevation={24} className={classes.bannerContent} >
+                <Paper sx={{ backgroundColor: "#230053"}} elevation={24} className={classes.bannerContent} >
 
                     <div className={classes.tagline}>
                         <Typography
@@ -39,7 +39,8 @@ const Banner = () => {
                                 fontWeight: "bold",
                                 marginBottom: 15,
                                 fontFamily: "Montserrat",
-                                color: "White"
+                                color: "White",
+                                opacity: '0.7'
                             }}
                         >
                             Crypto Trail
@@ -48,7 +49,7 @@ const Banner = () => {
                         <Typography
                             variant="subtitle2"
                             style={{
-                                color: "#FF5722",
+                                color: "#388E3C",
                                 textTransform: "capitalize",
                                 fontFamily: "Montserrat",
                                 fontWeight: "bold"

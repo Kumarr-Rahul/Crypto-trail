@@ -7,18 +7,18 @@ const SelectButton = ({ children, selected, onClick }) => {
     const useStyles = makeStyles()(() => {
         return {
             selectbutton: {
-                border: "1px solid #FF5722",
+                border: "1px solid #388E3C",
                 borderRadius: 5,
                 padding: 10,
                 paddingLeft: 20,
                 paddingRight: 20,
                 fontFamily: "Montserrat",
                 cursor: "pointer",
-                backgroundColor: selected ? "#FF5722" : "",
+                backgroundColor: selected ? "#388E3C" : "",
                 color: selected ? "black" : "",
                 fontWeight: selected ? 700 : 500,
                 "&:hover": {
-                    backgroundColor: "#FF5722",
+                    backgroundColor: "#388E3C",
                     color: "black",
                 },
                 width: "22%",

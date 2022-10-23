@@ -99,7 +99,7 @@ const CoinPage = () => {
 
   const { classes } = useStyles();
 
-  if (!coin) return <LinearProgress style={{ backgroundColor: "#FF5722" }} />;
+  if (!coin) return <LinearProgress style={{ backgroundColor: "#388E3C" }} />;
 
   return (
 
@@ -115,7 +115,7 @@ const CoinPage = () => {
             height="200"
             style={{ marginBottom: 20, marginTop: 20, marginLeft: 130 }}
           />
-          <Typography variant="h3" className={classes.headingCoin} style={{ color: '#FF5722' }}>
+          <Typography variant="h3" className={classes.headingCoin} style={{ color: '#F5F3F8', opacity: '0.8' }}>
             {coin?.name}
           </Typography>
 
@@ -127,7 +127,7 @@ const CoinPage = () => {
 
             {/* For Rank */}
             <span style={{ display: 'flex' }}>
-              <Typography variant='h5' className={classes.heading} style={{ color: '#FF5722' }}>
+              <Typography variant='h5' className={classes.heading} style={{ color: '#388E3C', fontWeight:'bold' }}>
                 Rank :
               </Typography>
 
@@ -144,7 +144,7 @@ const CoinPage = () => {
 
             {/* Current Price */}
             <span style={{ display: "flex" }}>
-              <Typography variant="h5" className={classes.heading} style={{ color: '#FF5722' }}>
+              <Typography variant="h5" className={classes.heading} style={{ color: '#388E3C', fontWeight:'bold' }}>
                 Current Price:
               </Typography>
               &nbsp; &nbsp;
@@ -161,7 +161,7 @@ const CoinPage = () => {
 
             {/* Market Cap */}
             <span style={{ display: "flex" }}>
-              <Typography variant="h5" className={classes.heading} style={{ color: '#FF5722' }}>
+              <Typography variant="h5" className={classes.heading} style={{ color: '#388E3C', fontWeight:'bold' }}>
                 Market Cap:
               </Typography>
               &nbsp; &nbsp;

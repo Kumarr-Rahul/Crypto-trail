@@ -9,7 +9,7 @@ const useStyles = makeStyles()(() => {
   return {
     title: {
       flex: 1,
-      color: "#FF5722",
+      color: "#388E3C",
       fontFamily: "Montserrat",
       fontWeight: "bold",
       cursor: "pointer",
@@ -29,7 +29,7 @@ const Header = () => {
     palette: {
       mode: 'dark',
       primary: {
-        main: '#FF5722'
+        main: '#388E3C'
       }
     },
   });
@@ -49,7 +49,7 @@ const Header = () => {
                 width: 100,
                 height: 40,
                 marginRight: 15,
-                color: '#FF5722'
+                color: '#388E3C'
               }}
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}

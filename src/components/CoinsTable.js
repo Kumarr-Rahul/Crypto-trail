@@ -52,16 +52,16 @@ const CoinsTable = () => {
   const useStyles = makeStyles()(() => {
     return {
       row: {
-        backgroundColor: "#25004E",
+        backgroundColor: "#230053",
         cursor: "pointer",
         "&:hover": {
-          backgroundColor: "#1F003E",
+          backgroundColor: "#1B0047",
         },
         fontFamily: "Montserrat",
       },
       pagination: {
         "& .MuiPaginationItem-root": {
-          color: "#FF7043",
+          color: "#388E3C",
         },
       },
     };
@@ -77,7 +77,7 @@ const CoinsTable = () => {
         <Paper sx={{ backgroundColor: "#f5efff" }} elevation={24}>
           <Typography
             variant="h5"
-            style={{ margin: 30, fontFamily: "Montserrat", padding: 10, color: "#25004E", fontWeight: "bold" }}
+            style={{ margin: 30, fontFamily: "Montserrat", padding: 10, color: "#230053", fontWeight: "bold" }}
           >
             Cryptocurrency Prices by Market Cap
           </Typography>
@@ -96,10 +96,10 @@ const CoinsTable = () => {
           <TableContainer>
             {
               loading ? (
-                <LinearProgress style={{ backgroundColor: "#FF5722" }} />
+                <LinearProgress style={{ backgroundColor: "#388E3C" }} />
               ) : (
                 <Table>
-                  <TableHead style={{ backgroundColor: "#FF5722" }}>
+                  <TableHead style={{ backgroundColor: "#388E3C" }}>
                     <TableRow>
                       {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
                         <TableCell

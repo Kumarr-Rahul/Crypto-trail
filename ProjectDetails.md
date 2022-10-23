@@ -82,8 +82,9 @@
 * Wishlist coin
 
 # **Color Scheme**
-* Card color : #25004E
+* Card color : #25004E updated: #230053
 * Orange: #FF5722
+* Green: #388E3C
 
 
 
