@@ -1,5 +1,4 @@
 import { Container, Paper, Typography } from '@mui/material';
-import { padding } from '@mui/system';
 import React from 'react'
 import { makeStyles } from 'tss-react/mui';
 import Carousel from './Carousel';
@@ -37,6 +36,7 @@ const Banner = () => {
                             variant="h2"
                             style={{
                                 fontWeight: "bold",
+                                fontSize: 68,
                                 marginBottom: 15,
                                 fontFamily: "Montserrat",
                                 color: "White",
