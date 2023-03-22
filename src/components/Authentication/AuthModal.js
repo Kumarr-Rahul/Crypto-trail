@@ -11,6 +11,9 @@ import Login from './Login';
 import Signup from './Signup';
 import { makeStyles } from 'tss-react/mui';
 import GoogleButton from 'react-google-button';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../../firebase';
+import { CryptoState } from '../../CryptoContext';
 
 const style = {
     position: 'absolute',
@@ -50,10 +53,6 @@ export default function AuthModal() {
     const handleOpen = () => setOpen(true);
 
 
-    const signInWithGoogle = () => {
-        
-            };
-
     const handleClose = () => {
         setOpen(false);
     };
@@ -62,6 +61,31 @@ export default function AuthModal() {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+    };
+
+    const { setAlert } = CryptoState();
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const signInWithGoogle = () => {
+        signInWithPopup(auth, googleProvider)
+            .then((res) => {
+                setAlert({
+                    open: true,
+                    message: `Sign Up Successful. Welcome ${res.user.email}`,
+                    type: "success",
+                });
+
+                handleClose();
+            })
+            .catch((error) => {
+                setAlert({
+                    open: true,
+                    message: error.message,
+                    type: "error",
+                });
+                return;
+            });
     };
 
     return (
