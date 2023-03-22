@@ -1,7 +1,6 @@
 import { Container, createTheme, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from '@mui/material';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { CoinList } from '../config/api';
+// import { CoinList } from '../config/api';
 import { CryptoState } from '../CryptoContext';
 import { useNavigate } from 'react-router-dom';
 import { makeStyles } from 'tss-react/mui';
@@ -13,22 +12,11 @@ export function numberWithCommas(x) {
 
 const CoinsTable = () => {
 
-  const [coins, setCoins] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1)
   const history = useNavigate();
 
-  const { currency, symbol } = CryptoState(); //destructuring currency
-
-  const fetchCoins = async () => {
-    setLoading(true);
-
-    const { data } = await axios.get(CoinList(currency));
-
-    setCoins(data);
-    setLoading(false);
-  }
+  const { currency, symbol, coins, loading, fetchCoins } = CryptoState(); //destructuring currency
 
   useEffect(() => {
     fetchCoins();

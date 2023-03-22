@@ -13,6 +13,7 @@
     "axios": "^1.1.2",
     "chart.js": "^3.9.1",
     "faker": "^5.5.3",
+    "firebase": "^9.18.0",
     "html-react-parser": "^3.0.4",
     "react": "^18.2.0",
     "react-alice-carousel": "^2.6.4",
