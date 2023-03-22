@@ -96,6 +96,9 @@
 >## Data base rules of firebase
 * https://firebase.google.com/docs/reference/rules/rules.firestore.Request
 
+>## Icons for google sign button and remove from watchlist button
+* npm i react-icons
+* npm install react-google-button 
 
 
 
