@@ -99,6 +99,7 @@
 >## Icons for google sign button and remove from watchlist button
 * npm i react-icons
 * npm install react-google-button 
+* npm install @mui/icons-material <!-- delete icon in watchlist -->
 
 
 
