@@ -9,6 +9,8 @@ import { AppBar, Tab, Tabs } from '@mui/material';
 import { useState } from 'react';
 import Login from './Login';
 import Signup from './Signup';
+import { makeStyles } from 'tss-react/mui';
+import GoogleButton from 'react-google-button';
 
 const style = {
     position: 'absolute',
@@ -16,16 +18,41 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'background.paper',
+    bgcolor: '#1C0045',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-    borderRadius: 10,
+    borderRadius: 5,
+    color: "white"
 };
 
+const useStyles = makeStyles()(() => {
+    return {
+
+        google: {
+            padding: 24,
+            paddingTop: 0,
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+            gap: 20,
+            fontSize: 20,
+        },
+
+    };
+});
+
 export default function AuthModal() {
+
+    const { classes } = useStyles();
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
+
+
+    const signInWithGoogle = () => {
+        
+            };
 
     const handleClose = () => {
         setOpen(false);
@@ -85,13 +112,13 @@ export default function AuthModal() {
 
                         {value === 0 && <Login handleClose={handleClose} />}
                         {value === 1 && <Signup handleClose={handleClose} />}
-                        {/* <Box className={classes.google}>
+                        <Box className={classes.google}>
                             <span>OR</span>
                             <GoogleButton
                                 style={{ width: "100%", outline: "none" }}
                                 onClick={signInWithGoogle}
                             />
-                        </Box> */}
+                        </Box>
                     </Box>
                 </Fade>
             </Modal>

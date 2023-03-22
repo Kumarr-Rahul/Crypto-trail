@@ -5,6 +5,7 @@ import { makeStyles } from 'tss-react/mui';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CryptoState } from '../CryptoContext';
 import AuthModal from './Authentication/AuthModal';
+import UserSidebar from './Authentication/UserSidebar';
 
 
 const useStyles = makeStyles()(() => {
@@ -25,7 +26,7 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  const { currency, setCurrency } = CryptoState();
+  const { currency, setCurrency, user } = CryptoState();
 
   const darkTheme = createTheme({
     palette: {
@@ -60,7 +61,7 @@ const Header = () => {
               <MenuItem value={"INR"} >INR</MenuItem>
             </Select>
 
-            <AuthModal />
+            { user ? <UserSidebar /> : <AuthModal /> }
 
           </Toolbar>
         </Container>

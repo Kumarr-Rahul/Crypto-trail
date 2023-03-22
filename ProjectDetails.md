@@ -86,6 +86,14 @@
 * Orange: #FF5722
 * Green: #388E3C
 
+# **Firebase**
+* npm i  firebase
+
+>## More for login, alert box and sidebar from Material UI
+* Drawer for sidebar used for favourite coins section
+* Snackbars provide brief notifications used for alert mesaage popup like Incorrect Password, login successfully etc.
+* 
+
 
 
 
