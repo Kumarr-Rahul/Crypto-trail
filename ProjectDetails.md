@@ -92,7 +92,11 @@
 >## More for login, alert box and sidebar from Material UI
 * Drawer for sidebar used for favourite coins section
 * Snackbars provide brief notifications used for alert mesaage popup like Incorrect Password, login successfully etc.
-* 
+
+>## Data base rules of firebase
+* https://firebase.google.com/docs/reference/rules/rules.firestore.Request
+
+
 
 
 

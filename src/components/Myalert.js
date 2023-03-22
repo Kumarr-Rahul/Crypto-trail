@@ -9,7 +9,7 @@ const Myalert = () => {
     /* code for positon of alert message start here--- */
     const [state] = React.useState({
       open: false,
-      vertical: 'bottom',
+      vertical: 'top',
       horizontal: 'center',
     });
     const { vertical, horizontal} = state;
