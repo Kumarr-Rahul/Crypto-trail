@@ -5,6 +5,8 @@ import Homepage from './Pages/Homepage';
 import CoinPage from './Pages/CoinPage';
 import { makeStyles } from 'tss-react/mui';
 import './Pages/MyStyle.css';
+import Myalert from "./components/Myalert";
+
 
 function App() {
   const useStyles = makeStyles()(() => {
@@ -27,6 +29,7 @@ function App() {
           <Route path="/coins/:id" element={<CoinPage />} />
         </Routes>
       </div>
+      <Myalert />
     </div>
   );
 }
