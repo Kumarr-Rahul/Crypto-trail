@@ -7,6 +7,7 @@ import { signOut } from 'firebase/auth';
 import { auth, db } from '../../firebase';
 import { numberWithCommas } from '../CoinsTable';
 import { doc, setDoc } from 'firebase/firestore';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const useStyles = makeStyles()(() => {
@@ -57,7 +58,7 @@ const useStyles = makeStyles()(() => {
         coin: {
             padding: 10,
             borderRadius: 5,
-            color: "black",
+            color: "#efffef",
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
@@ -180,11 +181,12 @@ export default function UserSidebar() {
                                                     <span style={{ display: "flex", gap: 8 }}>
                                                         {symbol}{" "}
                                                         {numberWithCommas(coin.current_price.toFixed(2))}
-                                                        {/* <AiFillDelete
+                                                        <DeleteIcon
                                                             style={{ cursor: "pointer" }}
                                                             fontSize="16"
+                                                            backgroundColor="white"
                                                             onClick={() => removeFromWatchlist(coin)}
-                                                        /> */}
+                                                        />
                                                     </span>
                                                 </div>
                                             );
